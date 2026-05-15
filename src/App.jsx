@@ -42,7 +42,7 @@ export default function OldGenVsNewGen() {
   'Regolamento',
   'Old Gen',
   'New Gen',
-  'Players',
+  'New Gen Players',
   'Old Gen Players',
   'Campo Millenium'
 ]
