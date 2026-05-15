@@ -184,7 +184,7 @@ const oldGenPlayers = [
                   </button>
 
                   <button
-                    onClick={() => setActivePage('Players')}
+                    onClick={() => setActivePage('New Gen Players')}
                     className="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10 transition-all duration-300"
                   >
                     Player Stats
@@ -368,7 +368,7 @@ const oldGenPlayers = [
         </section>
       )}
 
-      {activePage === 'Players' && (
+      {activePage === 'New Gen Players' && (
         <section className="px-6 py-20">
           <div className="max-w-6xl mx-auto">
 
