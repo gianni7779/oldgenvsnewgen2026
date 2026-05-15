@@ -37,49 +37,87 @@ export default function OldGenVsNewGen() {
   }, [])
 
   const menu = [
-    'Home',
-    'Regolamento',
-    'Old Gen',
-    'New Gen',
-    'Players',
-    'Campo Millenium'
-  ]
-
+  'Home',
+  'Storico',
+  'Regolamento',
+  'Old Gen',
+  'New Gen',
+  'Players',
+  'Old Gen Players',
+  'Campo Millenium'
+]
   const playerStats = [
-    {
-      name: 'Ascione G',
-      goals: 14,
-      assists: 6,
-      mvp: 1,
-      role: 'CAPITANO',
-      image: '/ascione-g.jpg'
-    },
-    {
-      name: 'Paduano',
-      goals: 5,
-      assists: 4,
-      mvp: 0,
-      role: 'ATTACCANTE',
-      image: '/paduano.jpg'
-    },
-    {
-      name: 'Sorrentino',
-      goals: 3,
-      assists: 2,
-      mvp: 0,
-      role: 'DIFENSORE',
-      image: '/sorrentino.jpg'
-    },
-    {
-      name: 'Nocerino',
-      goals: 2,
-      assists: 1,
-      mvp: 0,
-      role: 'CENTROCAMPISTA',
-      image: '/nocerino.jpg'
-    }
-  ]
+  {
+    name: 'Ascione G',
+    goals: 14,
+    assists: 6,
+    mvp: 1,
+    role: 'CAPITANO',
+    image: '/ascione-g.jpg'
+  },
+  {
+    name: 'Paduano',
+    goals: 5,
+    assists: 4,
+    mvp: 0,
+    role: 'ATTACCANTE',
+    image: '/paduano.jpg'
+  },
+  {
+    name: 'Sorrentino',
+    goals: 3,
+    assists: 2,
+    mvp: 0,
+    role: 'DIFENSORE',
+    image: '/sorrentino.jpg'
+  },
+  {
+    name: 'Nocerino',
+    goals: 2,
+    assists: 1,
+    mvp: 0,
+    role: 'CENTROCAMPISTA',
+    image: '/nocerino.jpg'
+  }
+]
 
+const oldGenPlayers = [
+  {
+    name: 'Antonio Ascione',
+    goals: 2,
+    assists: 2,
+    mvp: 0,
+    role: 'ATTACCANTE'
+  },
+  {
+    name: 'Pasquale Ascione',
+    goals: 1,
+    assists: 1,
+    mvp: 0,
+    role: 'CENTROCAMPISTA'
+  },
+  {
+    name: 'Domenico Di Martino',
+    goals: 0,
+    assists: 1,
+    mvp: 0,
+    role: 'DIFENSORE'
+  },
+  {
+    name: 'Alessandro Nocerino',
+    goals: 2,
+    assists: 0,
+    mvp: 0,
+    role: 'ATTACCANTE'
+  },
+  {
+    name: 'Parente Mimmo',
+    goals: 0,
+    assists: 0,
+    mvp: 0,
+    role: 'PORTIERE'
+  }
+]
   return (
     <div className="min-h-screen bg-[#020817] text-white overflow-x-hidden">
 
@@ -395,7 +433,48 @@ export default function OldGenVsNewGen() {
           </div>
         </section>
       )}
+{activePage === 'Storico' && (
+  <section className="px-6 py-20">
 
+    <div className="max-w-6xl mx-auto">
+
+      <div className="text-center mb-14">
+
+        <h2 className="text-6xl font-black">
+          STORICO PARTITE
+        </h2>
+
+      </div>
+
+      <div className="rounded-[40px] border border-blue-400/20 bg-white/5 backdrop-blur-xl p-10">
+
+        <h3 className="text-5xl font-black mb-6">
+          PARTITA 3 LUGLIO 2025
+        </h3>
+
+        <p className="text-white/70 text-xl mb-8">
+          Prima edizione ufficiale Old Gen VS New Gen 🔥
+        </p>
+
+        <div className="overflow-hidden rounded-[30px] mb-10 border border-blue-400/20">
+
+          <iframe
+            width="100%"
+            height="600"
+            src="https://www.youtube.com/embed/KYRcdeSXmbo"
+            title="Old Gen vs New Gen"
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+)}
       {activePage === 'Regolamento' && (
         <section className="px-6 py-24">
           <div className="max-w-5xl mx-auto">
@@ -433,7 +512,71 @@ export default function OldGenVsNewGen() {
           </div>
         </section>
       )}
+{activePage === 'Old Gen Players' && (
+  <section className="px-6 py-20">
 
+    <div className="max-w-6xl mx-auto">
+
+      <div className="text-center mb-14">
+
+        <h2 className="text-6xl font-black">
+          OLD GEN PLAYERS 🏆
+        </h2>
+
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        {oldGenPlayers.map((player) => (
+
+          <div
+            key={player.name}
+            className="rounded-[35px] border border-blue-400/20 bg-white/5 backdrop-blur-xl p-8"
+          >
+
+            <h3 className="text-3xl font-black mb-2">
+              {player.name}
+            </h3>
+
+            <p className="text-blue-300 font-bold tracking-[2px] mb-8">
+              {player.role}
+            </p>
+
+            <div className="space-y-4">
+
+              <div className="flex justify-between p-4 rounded-2xl bg-blue-500/10">
+                <span>Goals</span>
+                <span className="font-black text-blue-300">
+                  {player.goals}
+                </span>
+              </div>
+
+              <div className="flex justify-between p-4 rounded-2xl bg-blue-500/10">
+                <span>Assist</span>
+                <span className="font-black text-blue-300">
+                  {player.assists}
+                </span>
+              </div>
+
+              <div className="flex justify-between p-4 rounded-2xl bg-blue-500/10">
+                <span>MVP</span>
+                <span className="font-black text-blue-300">
+                  {player.mvp}
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        ))}
+
+      </div>
+
+    </div>
+
+  </section>
+)}
       {activePage === 'Campo Millenium' && (
         <section className="px-6 pb-24 pt-20">
           <div className="max-w-6xl mx-auto">
